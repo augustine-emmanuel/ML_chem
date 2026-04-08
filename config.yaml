@@ -1,0 +1,63 @@
+project:
+  name: "Interpretable ML for Molecular Property Prediction"
+  seed: 42
+
+datasets:
+  esol:
+    url: "https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv"
+    smiles_col: "smiles"
+    target_col: "measured log solubility in mols per litre"
+    task: "regression"
+    name: "ESOL"
+
+  bace:
+    url: "https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/bace.csv"
+    smiles_col: "mol"
+    target_col: "pIC50"
+    task: "regression"
+    name: "BACE"
+
+features:
+  fingerprints:
+    radius: 2
+    n_bits: 2048
+  descriptors:
+    correlation_threshold: 0.95   # remove features correlated above this
+    variance_threshold: 0.01      # remove near-zero variance features
+
+cross_validation:
+  n_splits: 5
+  shuffle: true
+
+models:
+  random_forest:
+    n_estimators: 200
+    max_depth: null
+    min_samples_split: 2
+    random_state: 42
+
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    random_state: 42
+
+  svr:
+    kernel: "rbf"
+    C: 1.0
+    epsilon: 0.1
+
+  mlp:
+    hidden_layer_sizes: [128, 64]
+    activation: "relu"
+    max_iter: 500
+    random_state: 42
+
+explainability:
+  top_k_features: 10          # for Jaccard stability
+  shap_background_samples: 100  # for KernelSHAP (MLP, SVR)
+
+output:
+  results_dir: "results/"
+  figures_dir: "figures/"

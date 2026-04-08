@@ -1,0 +1,17 @@
+dataset,model,feature_type,rmse_mean,rmse_std,mae_mean,mae_std,r2_mean,r2_std,training_time_s
+bace,mlp,descriptors,23970478.72,53599618.01,1377068.607,3079217.638,-1.62749E+15,3.63917E+15,54.14
+bace,random_forest,descriptors,0.7352,0.0626,0.5435,0.0422,0.6976,0.048,117.24
+bace,svr,descriptors,0.7342,0.0715,0.5363,0.0428,0.6982,0.0531,6.44
+bace,xgboost,descriptors,0.7162,0.0574,0.5281,0.0354,0.7135,0.0393,48.16
+bace,mlp,fingerprints,1.1624,0.1176,0.8549,0.0791,0.2421,0.151,68.07
+bace,random_forest,fingerprints,0.7256,0.0421,0.5291,0.0245,0.7063,0.0303,307.38
+bace,svr,fingerprints,0.865,0.0688,0.6454,0.0608,0.5822,0.0558,46.12
+bace,xgboost,fingerprints,0.7105,0.0449,0.5304,0.028,0.7183,0.0315,57.2
+esol,mlp,descriptors,1.2199,1.1505,0.5416,0.0793,0.4109,1.0625,17.76
+esol,random_forest,descriptors,0.6579,0.0663,0.4781,0.0331,0.9005,0.0164,101.85
+esol,svr,descriptors,0.7249,0.0387,0.4853,0.0219,0.8796,0.0093,3.87
+esol,xgboost,descriptors,0.6155,0.0573,0.4349,0.0243,0.9129,0.0137,45.04
+esol,mlp,fingerprints,1.6241,0.1059,1.2303,0.0668,0.3909,0.1005,107.9
+esol,random_forest,fingerprints,1.1918,0.0344,0.8821,0.0207,0.674,0.024,160.61
+esol,svr,fingerprints,1.6017,0.0645,1.22,0.05,0.4119,0.0354,22.42
+esol,xgboost,fingerprints,1.1382,0.0291,0.8623,0.035,0.7027,0.0194,25.63
